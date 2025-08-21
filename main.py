@@ -34,6 +34,13 @@ def main():
         # Update all updatable items
         updatable.update(dt)
 
+        # Check for collisions
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game over!")
+                exit()
+
+
         # Create screen background
         screen.fill("black")
 
